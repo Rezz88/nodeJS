@@ -1,12 +1,12 @@
 const request = require("request");
 
-
+// Removed URL Key -> &key=AIzaSyD6zUWuE-kylZPq-B22zzAVjLmn8tW-tHA
 
 var geocodeAddress = (address, callback) => {
     var encodedAddress = encodeURIComponent(address);
 
     request({
-        url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=AIzaSyD6zUWuE-kylZPq-B22zzAVjLmn8tW-tHA`,
+        url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`,
         json: true
     }, (error, response, body) => {
         if (error) {
@@ -22,7 +22,6 @@ var geocodeAddress = (address, callback) => {
         }
     });
 };
-
 
 
 module.exports = {
