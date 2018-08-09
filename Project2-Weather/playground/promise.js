@@ -10,16 +10,14 @@ var asyncAdd = (a, b) => {
     });
 };
 
-asyncAdd(2,8).then((res) => {
+asyncAdd(2, 8).then((res) => {
     console.log("Result: ", res);
-    return asyncAdd(res, 10)
-}, (errorMessage) => {
-    console.log(errorMessage);
-}).then((res) => {
+    return asyncAdd(res, 10);
+}).then((res) => { 
     console.log("Should be 20: ", res);
-}, (erroMessage) => {
-    console.log(erroMessage);
-});
+}).catch((errorMessage) => {
+    console.log(errorMessage);
+})
 
 // var somePromise = new Promise((resolve, reject) => {
 //     setTimeout(() => {
